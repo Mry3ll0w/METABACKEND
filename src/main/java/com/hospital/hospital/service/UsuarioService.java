@@ -1,9 +1,9 @@
-package service;
+package com.hospital.hospital.service;
 
-import model.Usuario;
+import com.hospital.hospital.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.UsuarioRepository;
+import com.hospital.hospital.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
@@ -15,4 +15,5 @@ public class UsuarioService {
         return usuarioRepository.save(u);
     }
 
+    // Add other methods as needed
 }

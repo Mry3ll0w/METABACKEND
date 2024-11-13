@@ -1,4 +1,4 @@
-package model;
+package com.hospital.hospital.model;
 
 import jakarta.persistence.Entity;
 import lombok.Setter;
