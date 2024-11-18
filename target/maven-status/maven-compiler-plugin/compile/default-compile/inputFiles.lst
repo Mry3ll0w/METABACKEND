@@ -1,0 +1,7 @@
+/home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/HospitalApplication.java
+/home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/controller/UsuarioController.java
+/home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/model/Medico.java
+/home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/model/Paciente.java
+/home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/model/Usuario.java
+/home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/repository/UsuarioRepository.java
+/home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/service/UsuarioService.java

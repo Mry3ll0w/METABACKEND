@@ -1,15 +1,18 @@
 package com.hospital.hospital.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+@PersistenceContext
 @Entity
 @Getter
 @Setter
+@Table(name = "Usuarios")
 public class Usuario {
+    public Usuario(){
+
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
