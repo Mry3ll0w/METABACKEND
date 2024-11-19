@@ -23,10 +23,14 @@ public class Cita {
     @JoinColumn(name = "diagnosticoID")
     private Diagnostico diagnostico;
 
-    //Relacion Inversa 1 : 1
+    //Relacion Inversa N : 1
+    @ManyToOne
+    @JoinColumn(name = "medicoID")
     private Medico medico;
 
-    // Relacion Inversa 1 : 1
+    // Relacion Inversa N : 1
+    @ManyToOne
+    @JoinColumn(name = "pacienteID")
     private Paciente paciente;
 
     Cita(){

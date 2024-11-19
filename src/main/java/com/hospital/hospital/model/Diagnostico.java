@@ -13,6 +13,7 @@ public class Diagnostico {
     @GeneratedValue
     private long id;
     private String valoracionEspecialista, enfermedad;
+
     @OneToOne(mappedBy = "diagnostico")
     private Cita cita;
 
