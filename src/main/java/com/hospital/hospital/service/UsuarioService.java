@@ -3,18 +3,14 @@ package com.hospital.hospital.service;
 import com.hospital.hospital.dto.UsuarioDTO;
 import com.hospital.hospital.mappers.UsuarioMapper;
 import com.hospital.hospital.model.Usuario;
-import org.hibernate.sql.model.jdbc.OptionalTableUpdateOperation;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.hospital.hospital.repository.UsuarioRepository;
-import org.springframework.web.bind.annotation.RequestBody;
 
-import javax.swing.text.html.Option;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class UsuarioService {

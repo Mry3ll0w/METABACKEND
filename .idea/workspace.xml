@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a2dd95b-0949-4733-8414-4d76638eda6e" name="Changes" comment="Relacion creada.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/mappers/UsuarioMapper.java" afterDir="false" />
+    <list default="true" id="1a2dd95b-0949-4733-8414-4d76638eda6e" name="Changes" comment="Version inicial resto de DTOS">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/dto/CitaDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/dto/DiagnosticoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/dto/MedicoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/dto/PacienteDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Medico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Medico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Paciente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/controller/UsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/service/UsuarioService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +27,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -124,7 +127,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732031316145</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Mappper con MapStruct funcionando">
+      <option name="closed" value="true" />
+      <created>1732032079903</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732032079903</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Mapper + Usuario listo">
+      <option name="closed" value="true" />
+      <created>1732032191097</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1732032191097</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +164,9 @@
     <MESSAGE value="Update de properties" />
     <MESSAGE value="Patron MapStruct SIN LIBRERIAS" />
     <MESSAGE value="Relacion creada." />
-    <option name="LAST_COMMIT_MESSAGE" value="Relacion creada." />
+    <MESSAGE value="Mappper con MapStruct funcionando" />
+    <MESSAGE value="Mapper + Usuario listo" />
+    <MESSAGE value="Version inicial resto de DTOS" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version inicial resto de DTOS" />
   </component>
 </project>
