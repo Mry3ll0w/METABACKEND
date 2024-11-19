@@ -38,12 +38,8 @@ public class UsuarioService {
 
     public Optional<UsuarioDTO> getOneUserByName(String name){
         Optional<Usuario> u = usuarioRepository.findBynombre(name);
-        if(u.isPresent()){
-            Usuario us = u.get();
-            return Optional.of(new UsuarioDTO(us.getNombre(),us.getApellidos(),us.getUsuario()));
-        }else{
-            return Optional.empty();
-        }
+        //Si esta vacio devolvera null al no tener nada que recorrer --> Preguntar
+        return u.map(usuario -> mapper.usuarioToUsuarioDTO(usuario));
 
     }
 
