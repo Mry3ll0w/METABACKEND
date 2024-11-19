@@ -1,6 +1,7 @@
 package com.hospital.hospital.service;
 
 import com.hospital.hospital.dto.UsuarioDTO;
+import com.hospital.hospital.mappers.UsuarioMapper;
 import com.hospital.hospital.model.Usuario;
 import org.hibernate.sql.model.jdbc.OptionalTableUpdateOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,9 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    //Llamamos al mapper para usarlo
+    private UsuarioMapper mapper = UsuarioMapper.INSTANCE;
+
     public void createUsuario(Usuario u){
 
         usuarioRepository.save(u);
@@ -29,13 +33,7 @@ public class UsuarioService {
     public Optional<List<UsuarioDTO>> getAll(){
 
         //Obtenemos todos los Usuarios
-        List<Usuario> lUsers = usuarioRepository.findAll();
-
-        return Optional.of(lUsers.stream()
-                .map(u -> new UsuarioDTO
-                        (u.getNombre(),u.getApellidos(),u.getUsuario()))
-                .collect(Collectors.toList())
-        );
+        return Optional.of(mapper.usuariosToUsuarioDTOs(usuarioRepository.findAll()));
     }
 
     public Optional<UsuarioDTO> getOneUserByName(String name){
