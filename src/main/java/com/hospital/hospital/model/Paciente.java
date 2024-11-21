@@ -1,21 +1,28 @@
 package com.hospital.hospital.model;
 
 import jakarta.annotation.Nullable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
-import lombok.Setter;
-import lombok.Getter;
-
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import java.util.List;
 
+//Recomendacion IntelliJ preguntar
+@EqualsAndHashCode(callSuper = true)
 @Entity
-@Getter
-@Setter
+@DiscriminatorValue("1")
+@Data
 public class Paciente extends Usuario{
+    @Column(name = "nss")
+    private String NSS;
 
-    private String NSS, numTarjeta, telefono, direccion;
+    @Column(name = "numTarjeta")
+    private String numTarjeta;
+
+    @Column(name = "telefono")
+    private String telefono;
+
+    @Column(name = "direccion")
+    private String direccion;
 
     // Relacion Directa 1 : N
     @Nullable // Ya que no tiene pq tener citas
@@ -23,6 +30,7 @@ public class Paciente extends Usuario{
     private List<Cita> citas;
 
     // Relacion  N : N
+    @Nullable
     @ManyToMany(mappedBy = "pacientes")// Debe tener pacientes
     private List<Medico> medicos;
 

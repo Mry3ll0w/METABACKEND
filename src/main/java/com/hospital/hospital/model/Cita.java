@@ -1,21 +1,24 @@
 package com.hospital.hospital.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.util.Date;
 
 @Entity
-@Getter
-@Setter
+@Data
 @Table(name = "citas")
-public class Cita {
+public class Cita {// !Tipos JPA Herencia (3)
     @Id
     @GeneratedValue
     private long id;
+    @Column(name = "fechaHora")
     private Date fechaHora;
+
+    @Column(name = "motivoCita")
     private String motivoCita;
+
+    @Column(name = "atributo11")
     private Integer atributo11;
 
     //Relacion directa 1 : 1

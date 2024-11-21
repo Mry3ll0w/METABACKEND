@@ -1,0 +1,46 @@
+-- Tabla de usuarios
+CREATE TABLE usuario (
+    id int PRIMARY KEY,                    -- Clave primaria autoincremental
+    nombre VARCHAR(24) NOT NULL,               -- Nombre del usuario
+    apellidos VARCHAR(64) NOT NULL,            -- Apellidos del usuario
+    usuario VARCHAR(24) NOT NULL,              -- Nombre de usuario
+    clave VARCHAR(24) NOT NULL,                -- Contraseña
+    dUserType INT NOT NULL,                    -- Tipo de usuario: 0 para médico, 1 para paciente
+
+    -- Sección de paciente
+    nss VARCHAR(16),                           -- Número de Seguridad Social
+    numTarjeta VARCHAR(16),                    -- Número de tarjeta
+    telefono VARCHAR(16),                      -- Teléfono
+    direccion VARCHAR(32),                     -- Dirección
+
+    -- Sección de médico
+    numColegiado VARCHAR(16)                   -- Número de colegiado
+);
+
+-- Tabla intermedia entre médicos y pacientes
+CREATE TABLE medico_paciente (
+    id int PRIMARY KEY,                     -- Clave primaria autoincremental
+    medicoID INT NOT NULL,                     -- ID del médico
+    pacienteID INT NOT NULL,                   -- ID del paciente
+    FOREIGN KEY (medicoID) REFERENCES usuario (id) ON DELETE CASCADE,   -- Clave foránea que referencia al médico
+    FOREIGN KEY (pacienteID) REFERENCES usuario (id) ON DELETE CASCADE  -- Clave foránea que referencia al paciente
+);
+
+-- Tabla de citas
+CREATE TABLE cita (
+    id int PRIMARY KEY,                     -- Clave primaria autoincremental
+    fechaHora TIMESTAMP NOT NULL,              -- Fecha y hora de la cita
+    motivoCita VARCHAR(256),                   -- Motivo de la cita
+    atribute11 INT,                            -- Atributo genérico (renombrarlo si es necesario)
+    diagnosticoID INT                     -- Relación con diagnóstico
+
+);
+
+-- Tabla de diagnósticos
+CREATE TABLE diagnostico (
+    id int PRIMARY KEY,                     -- Clave primaria autoincremental
+    valoracionEspecialista TEXT NOT NULL,      -- Valoración del especialista
+    enfermedad VARCHAR(64) NOT NULL,           -- Enfermedad diagnosticada
+    citaID INT,                                -- Relación con la cita
+    CONSTRAINT fk_cita FOREIGN KEY (citaID) REFERENCES cita (id) ON DELETE CASCADE
+);

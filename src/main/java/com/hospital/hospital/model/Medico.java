@@ -2,14 +2,17 @@ package com.hospital.hospital.model;
 
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import java.util.List;
 
+@EqualsAndHashCode(callSuper = true)
+@Data
 @Entity
-@Getter
-@Setter
+@DiscriminatorValue("0")
 public class Medico extends Usuario {
+    @Column(name = "numColegiado")
     private String numColegiado;
 
     // Relacion Directa 1 : N
@@ -21,8 +24,8 @@ public class Medico extends Usuario {
     @ManyToMany //Un medico debe tener Pacientes
     @JoinTable(
             name = "medico_paciente", // Nombre de la tabla intermedia para relaciones n:n
-            joinColumns = @JoinColumn(name = "medico_id"), // FK para Medico
-            inverseJoinColumns = @JoinColumn(name = "paciente_id") // FK para Paciente
+            joinColumns = @JoinColumn(name = "medicoID"), // FK para Medico
+            inverseJoinColumns = @JoinColumn(name = "pacienteID") // FK para Paciente
     )
     private List<Paciente> pacientes;
 
