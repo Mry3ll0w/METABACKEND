@@ -7,4 +7,5 @@ import java.util.Optional;
 public interface MedicoRepository extends JpaRepository<Medico, Long> {
     Medico save(Medico m);
     Optional<Medico> findBynumColegiado(String numColegiado);
+    Optional<Medico> findBynombre(String name);
 }

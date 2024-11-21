@@ -22,11 +22,15 @@ public class Medico extends Usuario {
 
     // Relacion Directa N : N
     @ManyToMany //Un medico debe tener Pacientes
+    @Nullable
     @JoinTable(
             name = "medico_paciente", // Nombre de la tabla intermedia para relaciones n:n
             joinColumns = @JoinColumn(name = "medicoID"), // FK para Medico
             inverseJoinColumns = @JoinColumn(name = "pacienteID") // FK para Paciente
     )
     private List<Paciente> pacientes;
+    Medico(){
+        this.setUsertype(0);
+    }
 
 }

@@ -5,7 +5,7 @@ CREATE TABLE usuario (
     apellidos VARCHAR(64) NOT NULL,            -- Apellidos del usuario
     usuario VARCHAR(24) NOT NULL,              -- Nombre de usuario
     clave VARCHAR(24) NOT NULL,                -- Contraseña
-    dUserType INT NOT NULL,                    -- Tipo de usuario: 0 para médico, 1 para paciente
+    usertype INT,                    -- Tipo de usuario: 0 para médico, 1 para paciente
 
     -- Sección de paciente
     nss VARCHAR(16),                           -- Número de Seguridad Social

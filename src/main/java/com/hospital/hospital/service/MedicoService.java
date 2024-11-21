@@ -1,19 +1,27 @@
 package com.hospital.hospital.service;
 
 import com.hospital.hospital.dto.MedicoDTO;
+import com.hospital.hospital.dto.UsuarioDTO;
 import com.hospital.hospital.mappers.MedicoMapper;
 import com.hospital.hospital.model.Medico;
+import com.hospital.hospital.model.Usuario;
 import com.hospital.hospital.repository.MedicoRepository;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
 public class MedicoService {
     @Autowired
     private MedicoRepository repo;
+
+    @Autowired
+    private UsuarioService userService;
 
     private final MedicoMapper mapper = MedicoMapper.INSTANCE;
 
@@ -38,6 +46,42 @@ public class MedicoService {
         //return optListMedico.isPresent() ? Optional.of()
 
         return optListMedico.map(mapper::toListMedicoDTO);
+    }
+
+    public void addPacienteToMedico(String nss, String numColegiado){
+
+    }
+
+    public boolean updateMedicoProperties(String name, Map<String, Object> updates) {
+
+        //Primero Updateamos la parte de Usuario del Medico
+        boolean updated = userService.updateUserProperties(name, updates);
+
+        if (updated) {
+            Optional<Medico> optMed = repo.findBynombre(name);
+
+            Medico med = optMed.get();// Va a estar presente ya que existe el usuario
+
+            // Aplicar las actualizaciones
+            updates.forEach((key, value) -> {
+                if (Objects.equals(key, "numColegiado")) {
+                  med.setNumColegiado((String) value);
+                }
+            });
+
+            // Guardar usuario actualizado en la base de datos
+            repo.save(med);
+            return true;
+        }
+
+        return false; // Usuario no encontrado
+    }
+
+    public Optional<MedicoDTO> findMedicoByNombre(String name){
+        Optional<Medico> optMedico = repo.findBynombre(name);
+        //return optListMedico.isPresent() ? Optional.of()
+
+        return optMedico.map(mapper::toMedicoDTO);
     }
 
 }

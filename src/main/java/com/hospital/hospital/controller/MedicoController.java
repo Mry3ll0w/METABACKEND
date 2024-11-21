@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/medic")
+@RequestMapping("/medico")
 public class MedicoController
 {
     @Autowired
@@ -19,6 +19,7 @@ public class MedicoController
     @PostMapping("/create")
     public void createMedic(@RequestBody Medico m){
         service.create(m);
+
     }
 
     @GetMapping
@@ -26,4 +27,39 @@ public class MedicoController
         return service.findAllMedics();
     }
 
+    @GetMapping("/{numColegiado}")
+    public Optional<MedicoDTO> getOneMedicoByNumColegiado(@PathVariable String numColegiado){
+
+        return service.findMedicoByNumeroColegiado(numColegiado);
+
+    }
+
+//    @GetMapping("/{name}")
+//    public Optional<MedicoDTO> getOneMedicoByName(@PathVariable String name){
+//        return service.findMedicoByNombre(name);
+//    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,11 +10,13 @@ import lombok.Setter;
 @Entity(name = "usuario")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(
-        name = "dUserType",
+        name = "usertype",
         discriminatorType = DiscriminatorType.INTEGER
 )// Decimos si es Medico (0) o Paciente (1) segun el valor de esta
 public class Usuario {
-    public Usuario(){}
+    public Usuario(){
+
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE) //Sequency (control de secuencia por parte de Java)
     @Column(name = "id")
@@ -32,4 +34,6 @@ public class Usuario {
     @Column(name = "clave")
     private String clave;
 
+    @Column(name = "usertype", nullable = false, insertable = false, updatable = false)
+    private Integer usertype;
 }

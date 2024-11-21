@@ -4,33 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a2dd95b-0949-4733-8414-4d76638eda6e" name="Changes" comment="Version inicial resto de DTOS">
-      <change afterPath="$PROJECT_DIR$/docker/sql script/table creation sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/controller/MedicoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/mappers/MedicoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/mappers/PacienteMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/repository/MedicoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/repository/PacienteRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/MedicoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/PacienteService.java" afterDir="false" />
+    <list default="true" id="1a2dd95b-0949-4733-8414-4d76638eda6e" name="Changes" comment="Migrado con totalidad a JPA">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/controller/CitaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/controller/DiagnosticoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/controller/PacienteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/dto/CitaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/dto/CitaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/dto/MedicoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/dto/MedicoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/dto/PacienteDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/dto/PacienteDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/dto/UsuarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/dto/UsuarioDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Cita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Cita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Diagnostico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Diagnostico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/controller/MedicoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/controller/MedicoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Medico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Medico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Paciente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Paciente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/repository/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/repository/UsuarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/repository/MedicoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/repository/MedicoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/MedicoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/MedicoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Medico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Medico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Paciente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Paciente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/service/UsuarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +154,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732036151395</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Cambios con respecto a herencia jpa">
+      <option name="closed" value="true" />
+      <created>1732208710813</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732208710813</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Migrado con totalidad a JPA">
+      <option name="closed" value="true" />
+      <created>1732214859996</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732214859996</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,6 +194,15 @@
     <MESSAGE value="Mappper con MapStruct funcionando" />
     <MESSAGE value="Mapper + Usuario listo" />
     <MESSAGE value="Version inicial resto de DTOS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version inicial resto de DTOS" />
+    <MESSAGE value="Cambios con respecto a herencia jpa" />
+    <MESSAGE value="Migrado con totalidad a JPA" />
+    <option name="LAST_COMMIT_MESSAGE" value="Migrado con totalidad a JPA" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((DataIntegrityViolationException)targetException).detailMessage" custom="org.springframework.dao.DataIntegrityViolationException" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
