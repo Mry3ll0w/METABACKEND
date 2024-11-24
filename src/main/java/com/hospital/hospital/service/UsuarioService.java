@@ -61,7 +61,7 @@ public class UsuarioService {
                         user.setClave((String) value);
                         break;
                     default:
-                        throw new IllegalArgumentException("Campo no válido: " + key);
+                        break;//Si se introduce un campo no valido no se hace nada, mayor compatibilidad entre usuario, Medico y Paciente
                 }
             });
 

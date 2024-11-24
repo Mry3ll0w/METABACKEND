@@ -57,6 +57,8 @@ public class MedicoService {
         //Primero Updateamos la parte de Usuario del Medico
         boolean updated = userService.updateUserProperties(name, updates);
 
+        // Eliminamos del
+
         if (updated) {
             Optional<Medico> optMed = repo.findBynombre(name);
 
@@ -83,5 +85,11 @@ public class MedicoService {
 
         return optMedico.map(mapper::toMedicoDTO);
     }
+
+    public void deleteMedico(String nombre){
+        Optional<Medico> optMed = repo.findBynombre(nombre);
+        optMed.ifPresent(medico -> repo.delete(medico));
+    }
+
 
 }

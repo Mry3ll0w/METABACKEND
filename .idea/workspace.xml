@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a2dd95b-0949-4733-8414-4d76638eda6e" name="Changes" comment="Migrado con totalidad a JPA">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/controller/CitaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/controller/DiagnosticoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/controller/PacienteController.java" afterDir="false" />
+    <list default="true" id="1a2dd95b-0949-4733-8414-4d76638eda6e" name="Changes" comment="Testeo de MedicController y algunos avances">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/controller/MedicoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/controller/MedicoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Medico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Medico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/repository/MedicoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/repository/MedicoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/MedicoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/MedicoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Medico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Medico.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/UsuarioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/service/UsuarioService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732214859996</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Testeo de MedicController y algunos avances">
+      <option name="closed" value="true" />
+      <created>1732449750797</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732449750797</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,7 +198,8 @@
     <MESSAGE value="Version inicial resto de DTOS" />
     <MESSAGE value="Cambios con respecto a herencia jpa" />
     <MESSAGE value="Migrado con totalidad a JPA" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migrado con totalidad a JPA" />
+    <MESSAGE value="Testeo de MedicController y algunos avances" />
+    <option name="LAST_COMMIT_MESSAGE" value="Testeo de MedicController y algunos avances" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
