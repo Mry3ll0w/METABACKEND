@@ -4,6 +4,7 @@ import com.hospital.hospital.dto.MedicoDTO;
 import com.hospital.hospital.dto.UsuarioDTO;
 import com.hospital.hospital.mappers.MedicoMapper;
 import com.hospital.hospital.model.Medico;
+import com.hospital.hospital.model.Paciente;
 import com.hospital.hospital.model.Usuario;
 import com.hospital.hospital.repository.MedicoRepository;
 import org.apache.catalina.User;
@@ -57,10 +58,10 @@ public class MedicoService {
         //Primero Updateamos la parte de Usuario del Medico
         boolean updated = userService.updateUserProperties(name, updates);
 
-        // Eliminamos del
-
         if (updated) {
-            Optional<Medico> optMed = repo.findBynombre(name);
+
+            Optional<Medico> optMed = repo.findBynombre(
+                    updates.get("nombre") == null ? name :(String) updates.get("nombre"));
 
             Medico med = optMed.get();// Va a estar presente ya que existe el usuario
 

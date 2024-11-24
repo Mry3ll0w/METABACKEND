@@ -8,4 +8,6 @@ import java.util.Optional;
 public interface PacienteRepository extends JpaRepository<Paciente,Long> {
     Paciente save(Paciente p);
     Optional<Paciente> findByNSS(String nss);
+    Optional<Paciente> findByNombre(String nombre);
+
 }
