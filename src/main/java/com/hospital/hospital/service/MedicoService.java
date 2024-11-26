@@ -93,4 +93,10 @@ public class MedicoService {
     }
 
 
+    // Funcion para ser usada unicamente en Servicios internos, no en controladores
+    public Optional<Medico> findMedicoByNumColegiado_(String numColegiado){
+        return repo.findBynumColegiado(numColegiado);
+    }
+
+
 }

@@ -1,6 +1,8 @@
 package com.hospital.hospital.controller;
+import com.hospital.hospital.dto.MedicoPacienteDTO;
 import com.hospital.hospital.dto.PacienteDTO;
 import com.hospital.hospital.model.Paciente;
+import com.hospital.hospital.service.MedicoPacienteService;
 import com.hospital.hospital.service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,9 @@ public class PacienteController {
 
     @Autowired
     private PacienteService service;
+
+    @Autowired
+    private MedicoPacienteService medicoPacienteService;
 
     @PostMapping
     public void createPaciente(@RequestBody Paciente p){
@@ -44,4 +49,32 @@ public class PacienteController {
         }
     }
 
+    @PatchMapping("/linkMedico")
+    public ResponseEntity<String> linkPacienteToMedico(@RequestBody MedicoPacienteDTO mp){
+        boolean bIsUpdated = medicoPacienteService.addMedicoToPacienteByNumColegiado(mp.numColegiado(), mp.NSS());
+
+        if (bIsUpdated) {
+            return ResponseEntity.ok("Paciente vinculado a medico de forma correcta");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

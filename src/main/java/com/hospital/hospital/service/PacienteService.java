@@ -22,6 +22,9 @@ public class PacienteService {
     private PacienteRepository repo;
 
     @Autowired
+    private MedicoPacienteService medicoPacienteService;
+
+    @Autowired
     private UsuarioService userService;
 
     public void createPaciente(Paciente p){
@@ -31,6 +34,10 @@ public class PacienteService {
     public Optional<PacienteDTO> getPacienteByNSS(String nss){
         Optional<Paciente> optPaciente = repo.findByNSS(nss);
         return optPaciente.map(mapper::toPacienteDTO);
+    }
+
+    public Optional<Paciente> getPacienteByNSS_(String nss){
+        return repo.findByNSS(nss);
     }
 
     public Optional<PacienteDTO> getPacienteByNombre(String name){
@@ -88,6 +95,8 @@ public class PacienteService {
 
         return false; // Usuario no encontrado
     }
+
+
 }
 
 
