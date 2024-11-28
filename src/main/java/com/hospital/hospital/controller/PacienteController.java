@@ -1,4 +1,6 @@
 package com.hospital.hospital.controller;
+import ch.qos.logback.core.pattern.parser.OptionTokenizer;
+import com.hospital.hospital.dto.MedicoDTO;
 import com.hospital.hospital.dto.MedicoPacienteDTO;
 import com.hospital.hospital.dto.PacienteDTO;
 import com.hospital.hospital.model.Paciente;
@@ -61,6 +63,22 @@ public class PacienteController {
 
     }
 
+    @GetMapping("/medicos/{nss}")
+    public Optional<List<MedicoDTO>> getAllMedicosFromPaciente(@PathVariable String nss){
+        return medicoPacienteService.getAllMedicosFromPaciente(nss);
+    }
+
+    @DeleteMapping("/medicos")
+    public ResponseEntity<String> eraseLinkMedicoPaciente(@RequestBody MedicoPacienteDTO mp){
+        boolean bIsDeleted = medicoPacienteService.deleteLinkPacienteMedico(mp.numColegiado(), mp.NSS());
+
+        if (bIsDeleted) {
+            return ResponseEntity.ok("Paciente desvinculado del medico");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+
+    }
 
 }
 

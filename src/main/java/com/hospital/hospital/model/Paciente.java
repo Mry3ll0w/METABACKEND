@@ -33,7 +33,7 @@ public class Paciente extends Usuario{
     @Nullable
     @ManyToMany(mappedBy = "pacientes")// Debe tener pacientes
     private List<Medico> medicos;
-    Paciente(){
+    public Paciente(){
         this.setUsertype(1);
     }
 

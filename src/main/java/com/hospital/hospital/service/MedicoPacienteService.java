@@ -1,5 +1,9 @@
 package com.hospital.hospital.service;
 
+import com.hospital.hospital.dto.MedicoDTO;
+import com.hospital.hospital.dto.PacienteDTO;
+import com.hospital.hospital.mappers.MedicoMapper;
+import com.hospital.hospital.mappers.PacienteMapper;
 import com.hospital.hospital.model.Medico;
 import com.hospital.hospital.model.Paciente;
 import com.hospital.hospital.repository.MedicoRepository;
@@ -19,6 +23,10 @@ public class MedicoPacienteService {
 
     @Autowired
     PacienteRepository pacienteRepo;
+
+    private MedicoMapper medicoMapper = MedicoMapper.INSTANCE;
+
+    private PacienteMapper pacienteMapper = PacienteMapper.INSTANCE;
 
     /// Agrega un paciente usando el numero de colegiado del medico y el numero de seguridad social del paciente
     public boolean addMedicoToPacienteByNumColegiado(String numColegiado, String NSS){
@@ -55,12 +63,81 @@ public class MedicoPacienteService {
         return true;
     }
 
-    // GETTER SINGLETON
+    // GETTERS
 
-    // UPDATE SINGLETON
+    public Optional<List<MedicoDTO>> getAllMedicosFromPaciente(String NSS){
+
+        //Primero pillamos el paciente
+        Optional<Paciente> optPaciente = pacienteRepo.findByNSS(NSS);
+        if(optPaciente.isPresent()){
+            Paciente p = optPaciente.get();
+            return Optional.of(medicoMapper.toListMedicoDTO(p.getMedicos()));
+        }else
+            return Optional.empty();
+
+    }
+
+    public Optional<List<PacienteDTO>> getAllPacientesFromMedico(String numColegiado){
+        //Primero pillamos el paciente
+        Optional<Medico> optMedico = medicoRepo.findBynumColegiado(numColegiado);
+        if(optMedico.isPresent()){
+            Medico m = optMedico.get();
+            return Optional.of(pacienteMapper.toListPacienteDTO(m.getPacientes()));
+        }else
+            return Optional.empty();
+    }
+
+
+
 
     // DELETE SINGLETON
+    public boolean deleteLinkPacienteMedico(String numColegiado, String nss){
+
+        try{
+            Optional<Medico> optMed = medicoRepo.findBynumColegiado(numColegiado);
+            Optional<Paciente> optPaciente = pacienteRepo.findByNSS(nss);
+            if(optMed.isPresent() && optPaciente.isPresent()){
+                Medico m = optMed.get();
+                Paciente p = optPaciente.get();
+                // Eliminamos ese elemento de la relacion
+
+                // Primero de medico
+                List<Paciente> lPacientes = m.getPacientes();
+                lPacientes.remove(p);
+                m.setPacientes(lPacientes);
+
+                // Despues de paciente
+                List<Medico> lMedicos = p.getMedicos();
+                lMedicos.remove(m);
+
+                // Guardamos
+                medicoRepo.save(m);
+                pacienteRepo.save(p);
+
+                return true;
+
+            }else
+                return false;
+        }catch (Exception e){
+            return false;
+        }
+
+    }
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

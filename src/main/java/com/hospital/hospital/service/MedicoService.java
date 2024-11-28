@@ -1,13 +1,9 @@
 package com.hospital.hospital.service;
 
 import com.hospital.hospital.dto.MedicoDTO;
-import com.hospital.hospital.dto.UsuarioDTO;
 import com.hospital.hospital.mappers.MedicoMapper;
 import com.hospital.hospital.model.Medico;
-import com.hospital.hospital.model.Paciente;
-import com.hospital.hospital.model.Usuario;
 import com.hospital.hospital.repository.MedicoRepository;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

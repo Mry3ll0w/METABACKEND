@@ -1,7 +1,11 @@
 package com.hospital.hospital.controller;
 
 import com.hospital.hospital.dto.MedicoDTO;
+import com.hospital.hospital.dto.MedicoPacienteDTO;
+import com.hospital.hospital.dto.PacienteDTO;
 import com.hospital.hospital.model.Medico;
+import com.hospital.hospital.model.Paciente;
+import com.hospital.hospital.service.MedicoPacienteService;
 import com.hospital.hospital.service.MedicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +21,9 @@ public class MedicoController
 {
     @Autowired
     private MedicoService service;
+
+    @Autowired
+    private MedicoPacienteService medicoPacienteService;
 
     @PostMapping("/create")
     public void createMedic(@RequestBody Medico m){
@@ -52,10 +59,34 @@ public class MedicoController
         service.deleteMedico(name);
     }
 
-//    @GetMapping("/{name}")
-//    public Optional<MedicoDTO> getOneMedicoByName(@PathVariable String name){
-//        return service.findMedicoByNombre(name);
-//    }
+    @PatchMapping("/linkPaciente")
+    public ResponseEntity<String> linkPacienteToMedico(@RequestBody MedicoPacienteDTO mp){
+        boolean bIsUpdated = medicoPacienteService.addMedicoToPacienteByNumColegiado(mp.numColegiado(), mp.NSS());
+
+        if (bIsUpdated) {
+            return ResponseEntity.ok("Paciente vinculado a medico de forma correcta");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+
+    }
+
+    @GetMapping("/pacientes/{numColegiado}")
+    public Optional<List<PacienteDTO>> getAllPacientesFromMedico(@PathVariable String numColegiado){
+        return medicoPacienteService.getAllPacientesFromMedico(numColegiado);
+    }
+
+    @DeleteMapping("/pacientes")
+    public ResponseEntity<String> eraseLinkMedicoPaciente(@RequestBody MedicoPacienteDTO mp){
+        boolean bIsDeleted = medicoPacienteService.deleteLinkPacienteMedico(mp.numColegiado(), mp.NSS());
+
+        if (bIsDeleted) {
+            return ResponseEntity.ok("Paciente desvinculado del medico");
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+
+    }
 
 }
 
