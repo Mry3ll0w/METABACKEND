@@ -1,5 +1,7 @@
 package com.hospital.hospital.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -12,17 +14,23 @@ public class Cita {// !Tipos JPA Herencia (3)
     @Id
     @GeneratedValue
     private long id;
+
     @Column(name = "fechaHora")
-    private Date fechaHora;
+    @Temporal(TemporalType.TIMESTAMP)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    private String fechaHora;
 
     @Column(name = "motivoCita")
     private String motivoCita;
 
-    @Column(name = "atributo11")
+    @Column(name = "atribute11")
     private Integer atributo11;
+
+    // Puede existir una cita sin diagnostico aun, pero tiene que tener un medico y un paciente
 
     //Relacion directa 1 : 1
     @OneToOne
+    @Nullable
     @JoinColumn(name = "diagnosticoID")
     private Diagnostico diagnostico;
 
