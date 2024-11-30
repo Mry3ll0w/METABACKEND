@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Entity
 @Data
-@Table(name = "citas")
+@Table(name = "cita")
 public class Cita {// !Tipos JPA Herencia (3)
     @Id
     @GeneratedValue
@@ -18,7 +18,7 @@ public class Cita {// !Tipos JPA Herencia (3)
     @Column(name = "fechaHora")
     @Temporal(TemporalType.TIMESTAMP)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
-    private String fechaHora;
+    private Date fechaHora;
 
     @Column(name = "motivoCita")
     private String motivoCita;

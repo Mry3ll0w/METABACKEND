@@ -43,7 +43,7 @@ public class CitaService {
             updates.forEach((key, value) -> {
                 switch (key) {
                     case "fechaHora":
-                        cita.setFechaHora((String) value);//Cast a String p
+                        cita.setFechaHora((Date) value);//Cast a String p
                         break;
                     case "motivoCita":
                         cita.setMotivoCita((String) value);

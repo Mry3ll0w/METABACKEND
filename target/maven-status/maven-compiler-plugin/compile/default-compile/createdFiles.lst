@@ -9,8 +9,12 @@ com/hospital/hospital/model/Cita.class
 com/hospital/hospital/HospitalApplication.class
 com/hospital/hospital/dto/MedicoDTO.class
 com/hospital/hospital/repository/MedicoRepository.class
+com/hospital/hospital/repository/CitaRepository.class
 com/hospital/hospital/controller/MedicoController.class
 com/hospital/hospital/service/PacienteService.class
+com/hospital/hospital/service/CitaService.class
+com/hospital/hospital/service/PacienteCitaService.class
+com/hospital/hospital/service/MedicoCitaService.class
 com/hospital/hospital/dto/DiagnosticoDTO.class
 com/hospital/hospital/mappers/MedicoMapperImpl.class
 com/hospital/hospital/mappers/MedicoMapper.class
