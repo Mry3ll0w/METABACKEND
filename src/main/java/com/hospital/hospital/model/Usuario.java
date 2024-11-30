@@ -3,6 +3,11 @@ package com.hospital.hospital.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
 
 @PersistenceContext // Utilidad ??
 @Getter
@@ -13,7 +18,7 @@ import lombok.Setter;
         name = "usertype",
         discriminatorType = DiscriminatorType.INTEGER
 )// Decimos si es Medico (0) o Paciente (1) segun el valor de esta
-public class Usuario {
+public class Usuario implements UserDetails {// Para temas de seguridad
     public Usuario(){
 
     }
@@ -36,4 +41,21 @@ public class Usuario {
 
     @Column(name = "usertype", nullable = false, insertable = false, updatable = false)
     private Integer usertype;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
+    }
+
+    @Override
+    public String getPassword() {
+        return getClave();
+    }
+
+    @Override
+    public String getUsername() {
+        return getUsuario();
+    }
+
+
 }

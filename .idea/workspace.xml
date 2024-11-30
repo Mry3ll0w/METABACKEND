@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a2dd95b-0949-4733-8414-4d76638eda6e" name="Changes" comment="Delete relacion medico paciente lista.">
+    <list default="true" id="1a2dd95b-0949-4733-8414-4d76638eda6e" name="Changes" comment="Citas setter listo">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hospital/hospital/ConfiguradorSpring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hospital/hospital/SpringTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Cita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Cita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/CitaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/CitaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/controller/CitaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/controller/CitaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Cita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Cita.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Usuario.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/hospital/hospital/mappers/MedicoMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/hospital/hospital/mappers/MedicoMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/hospital/hospital/mappers/PacienteMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/hospital/hospital/mappers/PacienteMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/hospital/hospital/mappers/UsuarioMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/hospital/hospital/mappers/UsuarioMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hospital-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/hospital-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/hospital-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/hospital-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Record" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -65,7 +68,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.HospitalApplication.executor": "Debug",
+    "Application.HospitalApplication.executor": "Run",
+    "JUnit.SpringTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -73,10 +77,10 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.SpringTest.test">
     <configuration name="HospitalApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hospital.hospital.HospitalApplication" />
       <module name="hospital" />
@@ -90,8 +94,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hospital" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hospital.hospital.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hospital.hospital" />
+      <option name="MAIN_CLASS_NAME" value="com.hospital.hospital.SpringTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hospital" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hospital.hospital.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hospital.hospital" />
+      <option name="MAIN_CLASS_NAME" value="com.hospital.hospital.SpringTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SpringTest.test" />
+        <item itemvalue="JUnit.SpringTest" />
         <item itemvalue="Application.HospitalApplication" />
       </list>
     </recent_temporary>
@@ -217,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732812174863</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Citas setter listo">
+      <option name="closed" value="true" />
+      <created>1732989121303</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1732989121303</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,7 +293,8 @@
     <MESSAGE value="Guardando medico paciente tabla intermedia" />
     <MESSAGE value="Getter de Pacientes de un medico listo" />
     <MESSAGE value="Delete relacion medico paciente lista." />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete relacion medico paciente lista." />
+    <MESSAGE value="Citas setter listo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Citas setter listo" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
