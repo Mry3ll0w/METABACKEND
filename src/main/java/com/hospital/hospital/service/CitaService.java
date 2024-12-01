@@ -62,6 +62,20 @@ public class CitaService {
         }else
             return false;
     }
+
+    public boolean eraseCitaByAtributo11(Integer atr){
+
+        try{
+            Cita c = citaRepo.findByatributo11(atr).get();// Si es null lanza excep y peta haciendolo false
+            citaRepo.delete(c);
+
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+
+    }
+
 }
 
 

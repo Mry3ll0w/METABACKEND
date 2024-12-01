@@ -44,7 +44,7 @@ public class Cita {// !Tipos JPA Herencia (3)
     @JoinColumn(name = "pacienteID")
     private Paciente paciente;
 
-    Cita(){
+    public Cita(){
 
     }
 
