@@ -73,7 +73,11 @@ public class UsuarioService {
         return false; // Usuario no encontrado
     }
 
-    //!! Interfaces de Servicios TEMPLATE METHODS, AUTOWIRED
+    // Para auth
+    public List<Usuario> getAllUsuarios(){
+        return usuarioRepository.findAll();
+    }
+
 
 }
 

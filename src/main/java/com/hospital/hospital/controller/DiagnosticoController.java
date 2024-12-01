@@ -24,6 +24,11 @@ public class DiagnosticoController {
         return service.getAllDiagnosticos();
     }
 
+    @GetMapping("/filter/{enfermedad}")
+    public Optional<List<DiagnosticoDTO>> getAllDiagnosticosByEnfermedad(@PathVariable String enfermedad){
+        return service.getAllDiagnosticosByEnfermedad(enfermedad);
+    }
+
     @PostMapping("/create")
     public void create(@RequestBody Diagnostico d){
         service.createDiagnostico(d);
