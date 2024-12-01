@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a2dd95b-0949-4733-8414-4d76638eda6e" name="Changes" comment="Con ejemplo de Junit Listo.&#10;Dependencias de JWT y Mockito instaladas.">
+    <list default="true" id="1a2dd95b-0949-4733-8414-4d76638eda6e" name="Changes" comment="Ejemplo completo de Junit con Cita.java">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/hospital/hospital/CitaServiceTestMockito.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Cita.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Cita.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/CitaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/CitaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hospital/hospital/ConfiguradorSpring.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/hospital/hospital/SpringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hospital/hospital/SpringTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Diagnostico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/model/Diagnostico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/hospital/hospital/SpringTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/hospital/hospital/CitaServiceTestJunit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Cita.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Cita.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Diagnostico.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/model/Diagnostico.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Record" />
         <option value="Interface" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -59,28 +62,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HospitalApplication.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SpringTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SpringTest.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HospitalApplication.executor": "Run",
+    "JUnit.CitaServiceTestMockito.testEraseCitaByAtributo11_NotFound.executor": "Run",
+    "JUnit.SpringTest.executor": "Run",
+    "JUnit.SpringTest.test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.SpringTest.test">
+}]]></component>
+  <component name="RunManager" selected="Application.HospitalApplication">
     <configuration name="HospitalApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.hospital.hospital.HospitalApplication" />
       <module name="hospital" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hospital.hospital.*" />
+          <option name="PATTERN" value="com.hospital.hospital.CitaServiceTest" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -88,22 +92,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CitaServiceTestJunit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hospital" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.hospital.hospital.*" />
+          <option name="PATTERN" value="com.hospital.hospital.CitaServiceTest" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.hospital.hospital" />
-      <option name="MAIN_CLASS_NAME" value="com.hospital.hospital.SpringTest" />
+      <option name="MAIN_CLASS_NAME" value="com.hospital.hospital.CitaServiceTestJunit" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpringTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CitaServiceTestJunit.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hospital" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hospital.hospital.CitaServiceTest" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hospital.hospital" />
+      <option name="MAIN_CLASS_NAME" value="com.hospital.hospital.CitaServiceTestJunit" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CitaServiceTestMockito" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="hospital" />
       <extension name="coverage">
         <pattern>
@@ -112,8 +132,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.hospital.hospital" />
-      <option name="MAIN_CLASS_NAME" value="com.hospital.hospital.SpringTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="com.hospital.hospital.CitaServiceTestMockito" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CitaServiceTestMockito.testEraseCitaByAtributo11_NotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="hospital" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.hospital.hospital.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.hospital.hospital" />
+      <option name="MAIN_CLASS_NAME" value="com.hospital.hospital.CitaServiceTestMockito" />
+      <option name="METHOD_NAME" value="testEraseCitaByAtributo11_NotFound" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -121,9 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SpringTest.test" />
-        <item itemvalue="JUnit.SpringTest" />
         <item itemvalue="Application.HospitalApplication" />
+        <item itemvalue="JUnit.CitaServiceTestMockito" />
+        <item itemvalue="JUnit.CitaServiceTestMockito.testEraseCitaByAtributo11_NotFound" />
+        <item itemvalue="JUnit.CitaServiceTestJunit.test" />
+        <item itemvalue="JUnit.CitaServiceTestJunit" />
       </list>
     </recent_temporary>
   </component>
@@ -264,7 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732994733457</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Ejemplo completo de Junit con Cita.java">
+      <option name="closed" value="true" />
+      <created>1733049286901</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1733049286901</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,7 +342,8 @@
     <MESSAGE value="Delete relacion medico paciente lista." />
     <MESSAGE value="Citas setter listo" />
     <MESSAGE value="Con ejemplo de Junit Listo.&#10;Dependencias de JWT y Mockito instaladas." />
-    <option name="LAST_COMMIT_MESSAGE" value="Con ejemplo de Junit Listo.&#10;Dependencias de JWT y Mockito instaladas." />
+    <MESSAGE value="Ejemplo completo de Junit con Cita.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejemplo completo de Junit con Cita.java" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

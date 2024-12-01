@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "diagnosticos")
+@Table(name = "diagnostico")
 public class Diagnostico {
     @Id
     @GeneratedValue
