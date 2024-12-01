@@ -21,11 +21,13 @@
 /home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/model/Paciente.java
 /home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/model/Usuario.java
 /home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/repository/CitaRepository.java
+/home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/repository/DiagnosticoRepository.java
 /home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/repository/MedicoRepository.java
 /home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/repository/PacienteRepository.java
 /home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/repository/UsuarioRepository.java
 /home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/service/CitaDiagnosticoService.java
 /home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/service/CitaService.java
+/home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/service/DiagnosticoService.java
 /home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/service/MedicoCitaService.java
 /home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/service/MedicoPacienteService.java
 /home/antonio/Documentos/METABACKEND/src/main/java/com/hospital/hospital/service/MedicoService.java

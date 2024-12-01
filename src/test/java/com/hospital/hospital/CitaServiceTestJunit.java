@@ -36,7 +36,7 @@ public class CitaServiceTestJunit {
 
     @Test
     public void test() {
-        CitaDTO dtoC = citaService.getCitaByAtributo11(11).get();
+        CitaDTO dtoC = citaService.getCitaByAtributo11(11).get();// No puede fallar puesto que se ha creado previamente
         assertEquals("Testing",dtoC.motivoCita());
         assertEquals(this.currDate, dtoC.fechaHora());
     }

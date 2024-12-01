@@ -1,2 +1,2 @@
-/home/antonio/Documentos/METABACKEND/src/test/java/com/hospital/hospital/ConfiguradorSpring.java
-/home/antonio/Documentos/METABACKEND/src/test/java/com/hospital/hospital/SpringTest.java
+/home/antonio/Documentos/METABACKEND/src/test/java/com/hospital/hospital/CitaServiceTestJunit.java
+/home/antonio/Documentos/METABACKEND/src/test/java/com/hospital/hospital/CitaServiceTestMockito.java
