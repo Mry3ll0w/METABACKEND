@@ -22,6 +22,8 @@ public class AuthController {
     public String token(Authentication authentication) {
         LOG.debug("Token requested for user: '{}'", authentication.getName());
         String token = tokenService.generateToken(authentication);
+        //Agregar campos y relacionarlos con cada usuario
+
         LOG.debug("Token granted: {}", token);
         return token;
     }

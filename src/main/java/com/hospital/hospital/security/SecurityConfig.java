@@ -1,5 +1,6 @@
 package com.hospital.hospital.security;
 
+import com.hospital.hospital.model.Usuario;
 import com.hospital.hospital.service.UsuarioService;
 import com.nimbusds.jose.jwk.JWK;
 import com.nimbusds.jose.jwk.JWKSet;
@@ -16,12 +17,16 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -34,14 +39,25 @@ public class SecurityConfig {
 
     // Creamos un usuario predeterminado
     @Bean
-    public InMemoryUserDetailsManager user(){
+    public InMemoryUserDetailsManager user() {
+
+        List<Usuario> usuarios = usuarioService.getAllUsuarios();
+
+        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
 
 
-        return new InMemoryUserDetailsManager( User
-                .withUsername("pepe")
-                .password("{noop}pepe")
-                .authorities("read", "write")
-                .build());
+        for (Usuario u : usuarios) {
+            if (!manager.userExists(u.getUsername())) {
+                manager.createUser(User
+                        .withUsername(u.getUsername())
+                        .password("{noop}" + u.getClave())
+                        .authorities("read", "write")
+                        .build());
+            }
+        }
+
+
+        return manager;
     }
 
 
