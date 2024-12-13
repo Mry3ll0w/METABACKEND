@@ -25,6 +25,7 @@ public class AuthController {
         //Agregar campos y relacionarlos con cada usuario
 
         LOG.debug("Token granted: {}", token);
+
         return token;
     }
 
