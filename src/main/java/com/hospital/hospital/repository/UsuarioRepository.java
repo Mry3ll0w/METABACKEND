@@ -8,7 +8,8 @@ import java.util.Optional;
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     Usuario save (Usuario u);
     Optional<Usuario> findBynombre(String name);
-    // Usar Querys "a mano", JPQL
+    Optional<Usuario> findByusuario(String username);
+
 }
 
 

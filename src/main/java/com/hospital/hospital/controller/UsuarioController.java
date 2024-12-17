@@ -32,8 +32,8 @@ public class UsuarioController {
     }
 
     @GetMapping("/{name}")
-    public ResponseEntity<UsuarioDTO> getOneUserByName(@PathVariable String name) {
-        Optional<UsuarioDTO> user = usuarioService.getOneUserByName(name);
+    public ResponseEntity<UsuarioDTO> getOneUserByUserName(@PathVariable String name) {
+        Optional<UsuarioDTO> user = usuarioService.getOneUserByUsername(name);
 
         // Manejo de respuesta en caso de que no se encuentre el usuario
         return user.map(ResponseEntity::ok) // Si el usuario existe, devolver 200 OK con el usuario

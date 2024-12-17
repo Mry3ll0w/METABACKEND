@@ -4,6 +4,7 @@ import com.hospital.hospital.dto.UsuarioDTO;
 import com.hospital.hospital.mappers.UsuarioMapper;
 import com.hospital.hospital.model.Usuario;
 
+import com.hospital.hospital.security.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.hospital.hospital.repository.UsuarioRepository;
@@ -11,12 +12,13 @@ import com.hospital.hospital.repository.UsuarioRepository;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
+//! INCORPORAR EVENTOS
 @Service
 public class UsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+
 
     //Llamamos al mapper para usarlo
     private UsuarioMapper mapper = UsuarioMapper.INSTANCE;
@@ -24,6 +26,7 @@ public class UsuarioService {
     public void createUsuario(Usuario u){
 
         usuarioRepository.save(u);
+
     }
 
     public Optional<List<UsuarioDTO>> getAll(){
@@ -32,15 +35,15 @@ public class UsuarioService {
         return Optional.of(mapper.usuariosToUsuarioDTOs(usuarioRepository.findAll()));
     }
 
-    public Optional<UsuarioDTO> getOneUserByName(String name){
-        Optional<Usuario> u = usuarioRepository.findBynombre(name);
+    public Optional<UsuarioDTO> getOneUserByUsername(String userName){
+        Optional<Usuario> u = usuarioRepository.findByusuario(userName);
         //Si esta vacio devolvera null al no tener nada que recorrer --> Preguntar
         return u.map(usuario -> mapper.usuarioToUsuarioDTO(usuario));
 
     }
 
-    public boolean updateUserProperties(String name, Map<String, Object> updates) {
-        Optional<Usuario> optUser = usuarioRepository.findBynombre(name);
+    public boolean updateUserProperties(String userName, Map<String, Object> updates) {
+        Optional<Usuario> optUser = usuarioRepository.findByusuario(userName);
 
         if (optUser.isPresent()) {
             Usuario user = optUser.get();// Al estar presente lo "sacamos" (de opt a Usuario)
@@ -67,6 +70,7 @@ public class UsuarioService {
 
             // Guardar usuario actualizado en la base de datos
             usuarioRepository.save(user);
+
             return true;
         }
 
