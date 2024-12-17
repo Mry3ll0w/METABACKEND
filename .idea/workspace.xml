@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a2dd95b-0949-4733-8414-4d76638eda6e" name="Changes" comment="Listo back inicial">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/events/UsuarioChangedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/UserSyncService.java" afterDir="false" />
+    <list default="true" id="1a2dd95b-0949-4733-8414-4d76638eda6e" name="Changes" comment="Funcionando login con algunas mejoras necesitadas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/controller/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/repository/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/repository/UsuarioRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hospital/hospital/service/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/controller/UsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/repository/UsuarioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/repository/UsuarioRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/hospital/hospital/service/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hospital/hospital/service/UsuarioService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +62,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.HospitalApplication.executor": "Run",
+    "Application.HospitalApplication.executor": "Debug",
     "JUnit.CitaServiceTestMockito.executor": "Run",
     "JUnit.CitaServiceTestMockito.testEraseCitaByAtributo11_NotFound.executor": "Run",
     "JUnit.SpringTest.executor": "Run",
@@ -354,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734091905686</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Funcionando login con algunas mejoras necesitadas">
+      <option name="closed" value="true" />
+      <created>1734419434843</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1734419434843</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -369,7 +371,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rest API lista" />
     <MESSAGE value="Set en Usuarios" />
     <MESSAGE value="Getter Done." />
     <MESSAGE value="Update de properties" />
@@ -394,7 +395,8 @@
     <MESSAGE value="JWT BEARER LISTO." />
     <MESSAGE value="Obteniendo bearer token" />
     <MESSAGE value="Listo back inicial" />
-    <option name="LAST_COMMIT_MESSAGE" value="Listo back inicial" />
+    <MESSAGE value="Funcionando login con algunas mejoras necesitadas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Funcionando login con algunas mejoras necesitadas" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

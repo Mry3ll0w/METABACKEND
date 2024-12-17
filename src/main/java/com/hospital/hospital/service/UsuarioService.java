@@ -1,14 +1,13 @@
 package com.hospital.hospital.service;
 
 import com.hospital.hospital.dto.UsuarioDTO;
+import com.hospital.hospital.events.UsuarioChangedEvent;
 import com.hospital.hospital.mappers.UsuarioMapper;
 import com.hospital.hospital.model.Usuario;
-
-import com.hospital.hospital.security.SecurityConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.hospital.hospital.repository.UsuarioRepository;
-
+import org.springframework.context.ApplicationEventPublisher;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -19,6 +18,10 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    // Para gestionar eventos de actualización de usuarios
+    @Autowired
+    private ApplicationEventPublisher eventPublisher;
+
 
     //Llamamos al mapper para usarlo
     private UsuarioMapper mapper = UsuarioMapper.INSTANCE;
@@ -26,7 +29,7 @@ public class UsuarioService {
     public void createUsuario(Usuario u){
 
         usuarioRepository.save(u);
-
+        eventPublisher.publishEvent(new UsuarioChangedEvent(this)); // Notificar el cambio
     }
 
     public Optional<List<UsuarioDTO>> getAll(){
@@ -70,7 +73,7 @@ public class UsuarioService {
 
             // Guardar usuario actualizado en la base de datos
             usuarioRepository.save(user);
-
+            eventPublisher.publishEvent(new UsuarioChangedEvent(this)); // Notificar el cambio
             return true;
         }
 

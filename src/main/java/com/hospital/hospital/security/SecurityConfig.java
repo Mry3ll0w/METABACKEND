@@ -1,5 +1,6 @@
 package com.hospital.hospital.security;
 
+import com.hospital.hospital.events.UsuarioChangedEvent;
 import com.hospital.hospital.model.Usuario;
 import com.hospital.hospital.service.UsuarioService;
 import com.nimbusds.jose.jwk.JWK;
@@ -9,8 +10,10 @@ import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
 import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.event.EventListener;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -37,6 +40,10 @@ import java.util.List;
 public class SecurityConfig {
 
     private final RsaKeyProperties rsaKeys;
+
+    @Autowired
+    private ApplicationContext applicationContext; // Contexto de Spring
+
 
     @Autowired
     UsuarioService usuarioService;
@@ -94,6 +101,7 @@ public class SecurityConfig {
 
     public SecurityConfig(RsaKeyProperties rsaKeys) {
         this.rsaKeys = rsaKeys;
+        //this.userDetailsManager = new InMemoryUserDetailsManager();
     }
 
     @Bean
@@ -106,4 +114,31 @@ public class SecurityConfig {
         source.registerCorsConfiguration("/**", configuration);
         return source;
     }
+
+
+
+    @EventListener
+    public void handleUsuarioChangedEvent(UsuarioChangedEvent event) {
+        InMemoryUserDetailsManager userDetailsManager = applicationContext.getBean(InMemoryUserDetailsManager.class);
+
+        // Limpia y recarga los usuarios
+        refreshUsersInMemory(userDetailsManager);
+    }
+
+    private void refreshUsersInMemory(InMemoryUserDetailsManager userDetailsManager) {
+        // Eliminar los usuarios existentes
+        usuarioService.getAllUsuarios().forEach(usuario -> {
+            userDetailsManager.deleteUser(usuario.getUsername());
+        });
+
+        // Agregar los usuarios actualizados desde la base de datos
+        usuarioService.getAllUsuarios().forEach(usuario -> {
+            userDetailsManager.createUser(User.withUsername(usuario.getUsername())
+                    .password("{noop}" + usuario.getClave())
+                    .authorities("read", "write")
+                    .build());
+        });
+    }
+
+
 }
